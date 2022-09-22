@@ -1,0 +1,17 @@
+name: Open today's issue
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  open_habit_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Open issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/ISSUE_TEMPLATE/continuity.md

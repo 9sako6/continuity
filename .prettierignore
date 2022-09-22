@@ -1,2 +1,5 @@
 # build
 .next
+
+# issue template
+.github/ISSUE_TEMPLATE
