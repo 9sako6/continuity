@@ -1,4 +1,5 @@
 import { Issue } from "../../types/github";
+import { mockLabel } from "./label";
 
 type Params = Partial<Issue>;
 
@@ -181,3 +182,222 @@ const sampleIssue: Issue = {
   author_association: "COLLABORATOR",
   state_reason: "completed",
 };
+
+export const realIssues: Issue[] = [
+  {
+    url: "https://api.github.com/repos/9sako6/continuity/issues/8",
+    repository_url: "https://api.github.com/repos/9sako6/continuity",
+    labels_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/8/labels{/name}",
+    comments_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/8/comments",
+    events_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/8/events",
+    html_url: "https://github.com/9sako6/continuity/issues/8",
+    id: 1383160624,
+    node_id: "I_kwDOIDDyGs5ScVsw",
+    number: 8,
+    title: "Continuity on 2022/09/23",
+    user: {
+      login: "github-actions[bot]",
+      id: 41898282,
+      node_id: "MDM6Qm90NDE4OTgyODI=",
+      avatar_url: "https://avatars.githubusercontent.com/in/15368?v=4",
+      gravatar_id: "",
+      url: "https://api.github.com/users/github-actions%5Bbot%5D",
+      html_url: "https://github.com/apps/github-actions",
+      followers_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      following_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      gists_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      starred_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      subscriptions_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      organizations_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      repos_url: "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      events_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      received_events_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      type: "Bot",
+      site_admin: false,
+    },
+    labels: [mockLabel({ name: "continuity" })],
+    state: "open",
+    locked: false,
+    assignee: null,
+    assignees: [],
+    milestone: null,
+    comments: 0,
+    created_at: "2022-09-23T00:48:09Z",
+    updated_at: "2022-09-23T19:04:27Z",
+    closed_at: null,
+    author_association: "NONE",
+    active_lock_reason: null,
+    body: "- [ ] Go to the gym\n- [x] Learn English\n- [x] Study computer science\n",
+    reactions: {
+      url: "https://api.github.com/repos/9sako6/continuity/issues/8/reactions",
+      total_count: 0,
+      "+1": 0,
+      "-1": 0,
+      laugh: 0,
+      hooray: 0,
+      confused: 0,
+      heart: 0,
+      rocket: 0,
+      eyes: 0,
+    },
+    timeline_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/8/timeline",
+    performed_via_github_app: null,
+    state_reason: null,
+  },
+  {
+    url: "https://api.github.com/repos/9sako6/continuity/issues/7",
+    repository_url: "https://api.github.com/repos/9sako6/continuity",
+    labels_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/7/labels{/name}",
+    comments_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/7/comments",
+    events_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/7/events",
+    html_url: "https://github.com/9sako6/continuity/issues/7",
+    id: 1382879565,
+    node_id: "I_kwDOIDDyGs5SbRFN",
+    number: 7,
+    title: "Continuity on 2022/09/22",
+    user: {
+      login: "github-actions[bot]",
+      id: 41898282,
+      node_id: "MDM6Qm90NDE4OTgyODI=",
+      avatar_url: "https://avatars.githubusercontent.com/in/15368?v=4",
+      gravatar_id: "",
+      url: "https://api.github.com/users/github-actions%5Bbot%5D",
+      html_url: "https://github.com/apps/github-actions",
+      followers_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      following_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      gists_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      starred_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      subscriptions_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      organizations_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      repos_url: "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      events_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      received_events_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      type: "Bot",
+      site_admin: false,
+    },
+    labels: [mockLabel({ name: "continuity" })],
+    state: "open",
+    locked: false,
+    assignee: null,
+    assignees: [],
+    milestone: null,
+    comments: 0,
+    created_at: "2022-09-22T18:55:17Z",
+    updated_at: "2022-09-23T19:04:21Z",
+    closed_at: null,
+    author_association: "NONE",
+    active_lock_reason: null,
+    body: "- [x] Go to the gym\n- [x] Learn English\n- [x] Study computer science\n",
+    reactions: {
+      url: "https://api.github.com/repos/9sako6/continuity/issues/7/reactions",
+      total_count: 0,
+      "+1": 0,
+      "-1": 0,
+      laugh: 0,
+      hooray: 0,
+      confused: 0,
+      heart: 0,
+      rocket: 0,
+      eyes: 0,
+    },
+    timeline_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/7/timeline",
+    performed_via_github_app: null,
+    state_reason: null,
+  },
+  {
+    url: "https://api.github.com/repos/9sako6/continuity/issues/6",
+    repository_url: "https://api.github.com/repos/9sako6/continuity",
+    labels_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/6/labels{/name}",
+    comments_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/6/comments",
+    events_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/6/events",
+    html_url: "https://github.com/9sako6/continuity/issues/6",
+    id: 1382876444,
+    node_id: "I_kwDOIDDyGs5SbQUc",
+    number: 6,
+    title: "Continuity Thursday, September 22nd",
+    user: {
+      login: "github-actions[bot]",
+      id: 41898282,
+      node_id: "MDM6Qm90NDE4OTgyODI=",
+      avatar_url: "https://avatars.githubusercontent.com/in/15368?v=4",
+      gravatar_id: "",
+      url: "https://api.github.com/users/github-actions%5Bbot%5D",
+      html_url: "https://github.com/apps/github-actions",
+      followers_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      following_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      gists_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      starred_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      subscriptions_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      organizations_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      repos_url: "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      events_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      received_events_url:
+        "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      type: "Bot",
+      site_admin: false,
+    },
+    labels: [mockLabel({ name: "continuity" })],
+    state: "open",
+    locked: false,
+    assignee: null,
+    assignees: [],
+    milestone: null,
+    comments: 0,
+    created_at: "2022-09-22T18:52:23Z",
+    updated_at: "2022-09-22T18:52:24Z",
+    closed_at: null,
+    author_association: "NONE",
+    active_lock_reason: null,
+    body: "- [ ] Go to the gym\n- [ ] Learn English\n- [ ] Study computer science\n",
+    reactions: {
+      url: "https://api.github.com/repos/9sako6/continuity/issues/6/reactions",
+      total_count: 0,
+      "+1": 0,
+      "-1": 0,
+      laugh: 0,
+      hooray: 0,
+      confused: 0,
+      heart: 0,
+      rocket: 0,
+      eyes: 0,
+    },
+    timeline_url:
+      "https://api.github.com/repos/9sako6/continuity/issues/6/timeline",
+    performed_via_github_app: null,
+    state_reason: null,
+  },
+];

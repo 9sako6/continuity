@@ -1,18 +1,25 @@
 import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
-import { HeatMap } from "../components/heat-map";
+import { getHistory } from "../lib/get-history";
+import type { History } from "../lib/get-history";
 import { getIssues } from "../lib/issue";
 import styles from "../styles/Home.module.css";
+import { HistoryCalendar } from "../components/history-calendar";
 
-export const getStaticProps: GetStaticProps = async () => {
-  await getIssues({ owner: "ocaml", repo: "ocaml" });
+type Props = {
+  history: History;
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const issues = await getIssues({ owner: "9sako6", repo: "continuity" });
+  const history = getHistory(issues);
 
   return {
-    props: {},
+    props: { history },
   };
 };
 
-const Home: NextPage = () => {
+const Home: NextPage<Props> = ({ history }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +36,7 @@ const Home: NextPage = () => {
           <code className={styles.code}>pages/index.tsx</code>
         </p>
 
-        <HeatMap />
+        <HistoryCalendar history={history} />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

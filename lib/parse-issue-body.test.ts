@@ -1,4 +1,23 @@
+import { realIssues } from "../mock";
 import { parseIssueBody } from "./parse-issue-body";
+
+it("should parse a real issue", () => {
+  expect(parseIssueBody(realIssues[0].body!)).toEqual([
+    { title: "Go to the gym", count: 0 },
+    { title: "Learn English", count: 1 },
+    { title: "Study computer science", count: 1 },
+  ]);
+  expect(parseIssueBody(realIssues[1].body!)).toEqual([
+    { title: "Go to the gym", count: 1 },
+    { title: "Learn English", count: 1 },
+    { title: "Study computer science", count: 1 },
+  ]);
+  expect(parseIssueBody(realIssues[2].body!)).toEqual([
+    { title: "Go to the gym", count: 0 },
+    { title: "Learn English", count: 0 },
+    { title: "Study computer science", count: 0 },
+  ]);
+});
 
 it("should parse tasks", () => {
   const tasks = parseIssueBody(`
