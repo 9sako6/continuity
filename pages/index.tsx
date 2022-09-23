@@ -1,6 +1,16 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Head from "next/head";
+import { HeatMap } from "../components/heat-map";
+import { getIssues } from "../lib/issue";
 import styles from "../styles/Home.module.css";
+
+export const getStaticProps: GetStaticProps = async () => {
+  await getIssues({ owner: "ocaml", repo: "ocaml" });
+
+  return {
+    props: {},
+  };
+};
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +28,8 @@ const Home: NextPage = () => {
           Get started by editing{" "}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
+
+        <HeatMap />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
