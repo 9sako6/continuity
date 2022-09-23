@@ -5,4 +5,7 @@ labels: continuity
 
 - [ ] Go to the gym
 - [ ] Learn English
-- [ ] Study computer science
+- Study computer science
+  - [ ] Compiler
+  - [ ] Network
+- [ ] Sleep well
