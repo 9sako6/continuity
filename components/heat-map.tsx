@@ -23,23 +23,23 @@ export const HeatMap = ({ year, values }: Props) => {
 
   return (
     <div>
-      <h3 className="text-right text-zinc-400">{year}</h3>
+      <h3 className="text-right text-zinc-400 font-mono">{year}</h3>
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}
         values={values}
-        classForValue={(value) => {
-          if (!value) {
-            return "color-empty";
-          }
+        classForValue={(value: PixelValue) => {
           const count = value.count >= 4 ? 4 : value.count;
           return `color-github-${count} cursor-pointer`;
         }}
         tooltipDataAttrs={(value: PixelValue) => {
+          const { date, count } = value;
+          const word = count === 1 ? "achievement" : "achievements";
+
           return {
-            "data-tip": `${value.date.toISOString().slice(0, 10)} has count: ${
-              value.count
-            }`,
+            "data-tip": `${date
+              .toISOString()
+              .slice(0, 10)} has ${count} ${word}`,
           };
         }}
         showWeekdayLabels={true}

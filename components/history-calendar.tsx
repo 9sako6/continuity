@@ -9,11 +9,11 @@ type Props = {
 
 export const HistoryCalendar = ({ history }: Props) => {
   return (
-    <div className="w-full md:w-3/5">
+    <div className="w-full md:w-3/5 max-w-4xl">
       {history.map(({ title, logs }) => {
         return (
           <div key={title}>
-            <h2 className="text-lg">{title}</h2>
+            <h2 className="font-mono text-lg text-zinc-400">{title}</h2>
             <div>
               {logs.map(({ year, dates }) => {
                 const datesInYear = getDates(
