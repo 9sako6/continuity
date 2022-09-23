@@ -19,4 +19,6 @@ jobs:
       - run: yarn prettier-check
       - run: yarn lint
       - run: yarn test
+        env:
+          TZ: "Asia/Tokyo"
       - run: yarn export
