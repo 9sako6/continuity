@@ -73,7 +73,7 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        run: ${{ steps.detect-package-manager.outputs.runner }} export
         env:
           TZ: "Asia/Tokyo"
       - name: Upload artifact
