@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "react-calendar-heatmap/dist/styles.css";
+import "../styles/react-calendar-heatmap.css";
 
 import type { AppProps } from "next/app";
 
