@@ -7,21 +7,24 @@ import { HistoryCalendar } from "../components/history-calendar";
 
 type Props = {
   history: History;
+  owner: string;
+  repo: string;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  const [owner, repo] = process.env.REPOSITORY!.split("/");
   const issues = await getIssues({
-    owner: process.env.REPOSITORY!.split("/")[0],
-    repo: process.env.REPOSITORY!.split("/")[1],
+    owner,
+    repo,
   });
   const history = getHistory(issues);
 
   return {
-    props: { history },
+    props: { history, owner, repo },
   };
 };
 
-const Home: NextPage<Props> = ({ history }) => {
+const Home: NextPage<Props> = ({ history, owner, repo }) => {
   return (
     <div className="flex flex-col m-auto font-serif p-1.5 max-w-6xl min-h-screen text-zinc-400">
       <Head>
@@ -33,7 +36,7 @@ const Home: NextPage<Props> = ({ history }) => {
         <meta property="og:title" content={"Continuity"} />
         <meta
           property="og:image"
-          content={"https://9sako6.github.io/continuity/ogp.png"}
+          content={`https://${owner}.github.io/${repo}/ogp.png`}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
@@ -50,11 +53,11 @@ const Home: NextPage<Props> = ({ history }) => {
         Powered by
         <a
           className="pl-1 hover:underline"
-          href={"https://github.com/9sako6/continuity"}
+          href={`https://github.com/${owner}/${repo}`}
           target="_blank"
           rel="noreferrer"
         >
-          continuity
+          {repo}
         </a>
       </footer>
     </div>
