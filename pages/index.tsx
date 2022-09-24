@@ -19,6 +19,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 const Home: NextPage<Props> = ({ history }) => {
+  const repositoryName =
+    process.env.GITHUB_ACTION_REPOSITORY || "9sako6/continuity";
+  const siteUrl = `https://github.com/${repositoryName}`;
+
   return (
     <div className="flex flex-col m-auto font-serif p-1.5 max-w-6xl min-h-screen text-zinc-400">
       <Head>
@@ -28,7 +32,7 @@ const Home: NextPage<Props> = ({ history }) => {
           content="Heatmap calendar of your continuity."
         />
         <meta property="og:title" content={"Continuity"} />
-        <meta property="og:image" content={"/continuity/ogp.png"} />
+        <meta property="og:image" content={`${siteUrl}/ogp.png`} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
