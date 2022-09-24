@@ -1,4 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import { getHistory } from "../lib/get-history";
 import { mockIssue } from "../mock";
 import Home from "../pages";
@@ -39,9 +40,20 @@ const issues = [
 const history = getHistory(issues);
 
 test("home", () => {
-  render(<Home history={history} />);
+  render(<Home history={history} owner={"9sako6"} repo={"continuity"} />);
   const main = within(screen.getByRole("main"));
   expect(
     main.getByRole("heading", { level: 1, name: /Continuity/i })
   ).toBeDefined();
+});
+
+it("should show placeholder", () => {
+  const { getByText } = render(
+    <Home history={[]} owner={"9sako6"} repo={"continuity"} />
+  );
+  const main = within(screen.getByRole("main"));
+  expect(
+    main.getByRole("heading", { level: 1, name: /Continuity/i })
+  ).toBeDefined();
+  expect(getByText("Heatmap is deployed automatically.")).toBeInTheDocument();
 });

@@ -8,8 +8,21 @@ type Props = {
 };
 
 export const HistoryCalendar = ({ history }: Props) => {
+  const placeholder = (
+    <div className="rounded p-12 bg-slate-100">
+      <ol className="list-decimal">
+        <li className="ml-6">
+          A new issue is opened at 00:00 (UTC+9) everyday. This issue is a list
+          of things to do that day.
+        </li>
+        <li className="ml-6">Check off the checklist.</li>
+        <li className="ml-6">Heatmap is deployed automatically.</li>
+      </ol>
+    </div>
+  );
   return (
     <div className="md:max-w-5xl">
+      {history.length === 0 && placeholder}
       {history.map(({ title, logs }) => {
         return (
           <div key={title}>
