@@ -21,4 +21,4 @@ jobs:
       - run: yarn test
         env:
           TZ: "Asia/Tokyo"
-      - run: yarn export
+      - run: REPOSITORY=${{ github.repository }} yarn export

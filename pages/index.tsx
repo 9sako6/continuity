@@ -10,7 +10,10 @@ type Props = {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const issues = await getIssues({ owner: "9sako6", repo: "continuity" });
+  const issues = await getIssues({
+    owner: process.env.REPOSITORY!.split("/")[0],
+    repo: process.env.REPOSITORY!.split("/")[1],
+  });
   const history = getHistory(issues);
 
   return {
