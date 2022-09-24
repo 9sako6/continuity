@@ -1,5 +1,6 @@
 # build
 .next
+out
 
 # issue template
 .github/ISSUE_TEMPLATE
