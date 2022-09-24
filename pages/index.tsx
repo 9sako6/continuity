@@ -4,8 +4,6 @@ import { getHistory } from "../lib/get-history";
 import type { History } from "../lib/get-history";
 import { getIssues } from "../lib/issue";
 import { HistoryCalendar } from "../components/history-calendar";
-import { getRepo } from "../lib/get-repo";
-import { getOwner } from "../lib/get-owner";
 
 type Props = {
   history: History;
@@ -21,11 +19,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 const Home: NextPage<Props> = ({ history }) => {
-  const repo = getRepo();
-  const owner = getOwner();
-  const siteUrl = `https://${owner}.github.io/${repo}`;
-  const repoUrl = `https://github.com/${owner}/${repo}`;
-
   return (
     <div className="flex flex-col m-auto font-serif p-1.5 max-w-6xl min-h-screen text-zinc-400">
       <Head>
@@ -35,7 +28,10 @@ const Home: NextPage<Props> = ({ history }) => {
           content="Heatmap calendar of your continuity."
         />
         <meta property="og:title" content={"Continuity"} />
-        <meta property="og:image" content={`${siteUrl}/ogp.png`} />
+        <meta
+          property="og:image"
+          content={"https://9sako6.github.io/continuity/ogp.png"}
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -51,7 +47,7 @@ const Home: NextPage<Props> = ({ history }) => {
         Powered by
         <a
           className="pl-1 hover:underline"
-          href={repoUrl}
+          href={"https://github.com/9sako6/continuity"}
           target="_blank"
           rel="noreferrer"
         >
