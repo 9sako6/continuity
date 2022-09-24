@@ -30,16 +30,21 @@ export const HeatMap = ({ year, values }: Props) => {
         values={values}
         classForValue={(value: PixelValue) => {
           const count = value.count >= 4 ? 4 : value.count;
-          return `color-github-${count} cursor-pointer`;
+
+          return `cursor-pointer color-gitlab-${count}`;
         }}
         tooltipDataAttrs={(value: PixelValue) => {
           const { date, count } = value;
           const word = count === 1 ? "achievement" : "achievements";
+          const today = new Date();
+          const dateString = date.toISOString().slice(0, 10);
+          const text =
+            value.date > today
+              ? dateString
+              : `${dateString} has ${count} ${word}`;
 
           return {
-            "data-tip": `${date
-              .toISOString()
-              .slice(0, 10)} has ${count} ${word}`,
+            "data-tip": text,
           };
         }}
         showWeekdayLabels={true}
