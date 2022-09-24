@@ -1,5 +1,5 @@
 ---
-title: Continuity on {{ date | date('YYYY/MM/DD') }}
+title: Continuity on {{ env.TODAY }}
 labels: continuity
 ---
 
