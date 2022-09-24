@@ -13,7 +13,7 @@ export const HistoryCalendar = ({ history }: Props) => {
       {history.map(({ title, logs }) => {
         return (
           <div key={title}>
-            <h2 className="text-lg text-zinc-400">{title}</h2>
+            <h2 className="text-sm md:text-lg text-zinc-400">{title}</h2>
             <div>
               {logs.map(({ year, dates }) => {
                 const datesInYear = getDates(
