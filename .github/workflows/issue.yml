@@ -5,15 +5,27 @@ on:
     # Run at 00:00 (JST)
     - cron: "0 15 * * *"
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   open_habit_issue:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+      - name: Set parameters
+        id: set_params
+        run: |
+          echo "::set-output name=today::$(ruby -rdate -e 'puts Date.today.strftime("%Y/%m/%d")')"
+        env:
+          TZ: Asia/Tokyo
       - name: Open issue
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TZ: Asia/Tokyo
+          TODAY: ${{ steps.set_params.outputs.today }}
         with:
           filename: .github/ISSUE_TEMPLATE/continuity.md
