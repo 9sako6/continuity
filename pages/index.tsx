@@ -4,6 +4,8 @@ import { getHistory } from "../lib/get-history";
 import type { History } from "../lib/get-history";
 import { getIssues } from "../lib/issue";
 import { HistoryCalendar } from "../components/history-calendar";
+import { getRepo } from "../lib/get-repo";
+import { getOwner } from "../lib/get-owner";
 
 type Props = {
   history: History;
@@ -19,9 +21,10 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 const Home: NextPage<Props> = ({ history }) => {
-  const repositoryName =
-    process.env.GITHUB_ACTION_REPOSITORY || "9sako6/continuity";
-  const siteUrl = `https://github.com/${repositoryName}`;
+  const repo = getRepo();
+  const owner = getOwner();
+  const siteUrl = `https://${owner}.github.io/${repo}`;
+  const repoUrl = `https://github.com/${owner}/${repo}`;
 
   return (
     <div className="flex flex-col m-auto font-serif p-1.5 max-w-6xl min-h-screen text-zinc-400">
@@ -48,7 +51,7 @@ const Home: NextPage<Props> = ({ history }) => {
         Powered by
         <a
           className="pl-1 hover:underline"
-          href="https://github.com/9sako6/continuity"
+          href={repoUrl}
           target="_blank"
           rel="noreferrer"
         >
