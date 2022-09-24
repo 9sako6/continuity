@@ -23,7 +23,9 @@ export const HeatMap = ({ year, values }: Props) => {
 
   return (
     <div>
-      <h3 className="text-right text-zinc-400 font-mono">{year}</h3>
+      <h3 className="text-xs md:text-sm text-right text-zinc-400 font-mono">
+        {year}
+      </h3>
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}

@@ -28,20 +28,22 @@ const Home: NextPage<Props> = ({ history }) => {
           content="Heatmap calendar of your continuity."
         />
         <meta property="og:title" content={"Continuity"} />
-        <meta property="og:image" content={"/ogp.png"} />
+        <meta property="og:image" content={"/continuity/ogp.png"} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex-1 text-zinc-400">
-        <h1 className="pt-14 pb-14 text-2xl text-left">Continuity</h1>
+        <h1 className="text-lg pt-14 pb-14 md:text-2xl text-left">
+          Continuity
+        </h1>
         <HistoryCalendar history={history} />
       </main>
 
-      <footer className="relative bottom-0 flex justify-center pt-8 pb-4">
+      <footer className="text-sm relative bottom-0 flex justify-center pt-8 pb-4">
         Powered by
         <a
-          className="pl-1 hover:text-zinc-200"
+          className="pl-1 hover:underline"
           href="https://github.com/9sako6/continuity"
           target="_blank"
           rel="noreferrer"
