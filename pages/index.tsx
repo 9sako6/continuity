@@ -25,8 +25,11 @@ const Home: NextPage<Props> = ({ history }) => {
         <title>Continuity</title>
         <meta
           name="description"
-          content="Heatmap of ongoing habits. Continuity is power."
+          content="Heatmap calendar of your continuity."
         />
+        <meta property="og:title" content={"Continuity"} />
+        <meta property="og:image" content={"/ogp.png"} />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
