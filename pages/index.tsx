@@ -20,27 +20,28 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Home: NextPage<Props> = ({ history }) => {
   return (
-    <div className="">
+    <div className="flex flex-col m-auto font-serif p-1.5 max-w-6xl min-h-screen text-zinc-400">
       <Head>
         <title>Continuity</title>
         <meta
           name="description"
-          content="Heatmap of ongoing habits. Continuity is power."
+          content="Heatmap calendar of your continuity."
         />
+        <meta property="og:title" content={"Continuity"} />
+        <meta property="og:image" content={"/ogp.png"} />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex items-center justify-center flex-col min-h-screen">
-        <h1 className="pb-12 text-2xl font-mono text-zinc-300 text-left">
-          Continuity
-        </h1>
+      <main className="flex-1 text-zinc-400">
+        <h1 className="pt-14 pb-14 text-2xl text-left">Continuity</h1>
         <HistoryCalendar history={history} />
       </main>
 
-      <footer className="font-mono flex items-center justify-center pt-4 pb-4 border-t border-gray-800 text-zinc-500">
+      <footer className="relative bottom-0 flex justify-center pt-8 pb-4">
         Powered by
         <a
-          className="pl-2"
+          className="pl-1 hover:text-zinc-200"
           href="https://github.com/9sako6/continuity"
           target="_blank"
           rel="noreferrer"
